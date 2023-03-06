@@ -11,7 +11,7 @@ from . import views
 
 urlpatterns = [
     #path('', views.index, name='index'), #views.py의 함수 매핑. DispatcherServlet -> Controller 확인 및 해당 컨트롤러의 핸들러 메서드로 매핑해주는 느낌
-    path('', views.main),
+    path('', views.main, name='main'),
     path('createMemo/', views.createMemo),
-    path('detail', views.detail, name='detail') # 앞에 /를 안 붙여도 됨 (자동으로 붙음)
+    path('detail', views.detail, name='detail'), # 앞에 /를 안 붙여도 됨 (자동으로 붙음)
 ]
