@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'onememos.apps.OnememosConfig', # 하위 app config 추가
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

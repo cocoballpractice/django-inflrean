@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>메모 작성 폼</title>
+        <style>
+            form > label{
+                display: inline-block;
+                width: 120px;
+            }
+            form > input {
+                padding: 4px;
+                margin-bottom: 4px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>메모 작성 폼</h1>
+
+        <form action="http://localhost:8000/onememos/createMemo" method="POST" id="memoWriteForm"> <!-- 절대 경로를 넣어줘야 한다-->
+        {% csrf_token %}
+            <label for="memo">메모 입력</label>
+            <input type="text" id="memo" name="memoContent" size="100" placeholder="내용을 입력하세요" autocomplete="false"> <!--name = views에서 받을 데이터 변수명 일치-->
+        </form>
+
+        <div>
+            <button type="submit">메모 등록</button>
+        </div>
+
+    </body>
+</html>

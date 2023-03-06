@@ -10,6 +10,8 @@ from . import views
 # 해당 urls.py가 onememos 내부에 있으므로 추가 path를 적을 필요는 없음
 
 urlpatterns = [
-    path('', views.index, name='index'), #views.py의 함수 매핑. DispatcherServlet -> Controller 확인 및 해당 컨트롤러의 핸들러 메서드로 매핑해주는 느낌
+    #path('', views.index, name='index'), #views.py의 함수 매핑. DispatcherServlet -> Controller 확인 및 해당 컨트롤러의 핸들러 메서드로 매핑해주는 느낌
+    path('', views.main),
+    path('createMemo/', views.createMemo),
     path('detail', views.detail, name='detail') # 앞에 /를 안 붙여도 됨 (자동으로 붙음)
 ]
