@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>메모 작성 폼</title>
+        <style>
+            form > label{
+                display: inline-block;
+                width: 120px;
+            }
+            form > input {
+                padding: 4px;
+                margin-bottom: 4px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>메모 수정 폼</h1>
+
+        <form action="./{{article.id}}" method="POST" id="memoModifyForm"> <!--상대 경로 지정 시 주의-->
+            {% csrf_token %}
+            <input type="hidden" name="idx" value="{{article.id}}">
+
+            <label for="memo">메모 입력</label>
+            <input type="text" id="memo" name="memoContent" size="100" placeholder="내용을 입력하세요" value="{{article.description}}" autocomplete="false">
+            <button type="submit" form="memoModifyForm">메모 등록</button>
+        </form>
+
+    </body>
+</html>
